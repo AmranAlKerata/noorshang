@@ -1,0 +1,66 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+section {
+  @include padding(150px 0 0 0);
+  position: relative;
+  z-index: 3;
+}
+
+.section-heading {
+  @include margin-bottom(100px);
+  text-align: center;
+}
+
+section {
+
+  .section-heading h2 {
+    @include margin-bottom(20px);
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      width: 54px;
+      height: 54px;
+      background-color: $c_primary;
+      position: absolute;
+      #{$start_dir}: -10px;
+      top: 0;
+      border-radius: 100px;
+      z-index: -1;
+      transition: all .3s ease-in-out;
+
+      @include media($md) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+  }
+
+  &:hover {
+    .section-heading h2::before {
+      width: 106%;
+
+    }
+  }
+}
+
+.section-heading p {
+  margin-bottom: 0;
+}
+
+.theme-img {
+  border: 1px solid $c_text;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.19);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+}
+
+.text-justify {
+  text-align: justify;
+}

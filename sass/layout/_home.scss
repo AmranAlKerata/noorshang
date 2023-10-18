@@ -1,0 +1,27 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+
+.home {
+    background-color: adjust-color($color: $c_primary, $alpha: -0.6);
+    min-height: 100vh;
+
+    img {
+        max-width: 500px;
+        text-align: end;
+    }
+
+    img:last-of-type {
+        position: absolute;
+        max-width: 250px;
+        #{$start-dir}: 100px;
+        bottom: -100px;
+    }
+
+    @include media($md) {
+        h1 {
+            @include font-size(50px)
+        }
+    }
+}

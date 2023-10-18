@@ -1,0 +1,22 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+
+footer {
+    background-color: $c_primary;
+
+    p,
+    a {
+
+        font-size: 16px;
+    }
+
+    a {
+        color: $c_text;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}

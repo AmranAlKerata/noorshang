@@ -1,0 +1,14 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+.franchisees {
+    @include padding-bottom(150px);
+    @include margin-top(150px);
+    background-color: adjust-color($c_background, $alpha: -0.95);
+
+    .box {
+        border: 1px solid $c_text;
+        padding: 30px;
+    }
+}

@@ -1,0 +1,29 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+.vision {
+    @include padding-bottom(150px);
+
+    .row {
+        row-gap: 100px;
+
+        .col-12 {
+            padding-#{$start_dir}: 20px;
+        }
+
+        .icon {
+            width: 400px;
+
+            @include media($lg) {
+                width: auto;
+
+                img {
+
+                    max-width: 150px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

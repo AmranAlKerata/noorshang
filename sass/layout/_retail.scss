@@ -1,0 +1,9 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+.retail {
+    .icon img {
+        max-width: 100px;
+    }
+}

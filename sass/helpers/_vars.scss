@@ -1,0 +1,25 @@
+$lang: "en";
+
+$dir: ltr;
+$opp-dir: rtl;
+$start-dir: left;
+$end-dir: right;
+$transform-direction: 1;
+
+@if ($lang =="ar") {
+    $dir: rtl;
+    $opp-dir: ltr;
+    $start-dir: right;
+    $end-dir: left;
+    $transform-direction: -1;
+}
+
+$c_primary: #f40f02;
+$c_text: #241C15;
+$c_background: #707070;
+
+$xxl: "max-width: 1399px";
+$xl: "max-width: 1199px";
+$lg: "max-width: 991px";
+$md: "max-width: 768px";
+$sm: "max-width: 576px";

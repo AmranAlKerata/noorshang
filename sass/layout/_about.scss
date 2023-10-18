@@ -1,0 +1,9 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+.about {
+    .swiper-wrapper {
+        height: auto;
+    }
+}

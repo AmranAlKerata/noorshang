@@ -1,0 +1,11 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+.hili-mession {
+    .icon-box {
+        .icon img {
+            max-width: 200px;
+        }
+    }
+}

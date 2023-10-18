@@ -1,0 +1,112 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+@use "../bootstrap/vendor/rfs" as *;
+
+.product-advantages {
+    .side-heading {
+        position: absolute;
+
+        &.left {
+            transform: rotate(-90deg);
+            left: -20%;
+            top: 20%;
+
+
+        }
+
+        &.right {
+            transform: rotate(90deg);
+            right: -20%;
+            bottom: 20%;
+
+
+        }
+
+        @include media($lg) {
+
+            &.right,
+            &.left {
+                display: none;
+            }
+
+        }
+
+    }
+
+    .row {
+        row-gap: 100px;
+    }
+
+    [class*="col-"] {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    %border-radius {
+        border-top-right-radius: 200px;
+        border-top-left-radius: 200px;
+
+    }
+
+    %trans {
+        transition: all .3s ease-in-out;
+    }
+
+    .card {
+        position: relative;
+
+        .front {
+            position: relative;
+
+            .theme-img {
+                @extend %border-radius;
+                @extend %trans;
+            }
+
+
+            &::before {
+                content: "";
+                background-color: $c_primary;
+                width: 100%;
+                height: 100%;
+                @extend %border-radius;
+                transition: all .5s ease-in;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+
+            }
+
+        }
+
+        &:hover .front::before {
+            box-shadow: 30px 30px 0px -5px $c_text;
+            opacity: 1;
+
+        }
+
+        .back {
+            width: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            z-index: -1;
+            transition: all .3s ease-in;
+        }
+
+        &:hover {
+            .back {
+                z-index: 1;
+                opacity: 1;
+            }
+
+            .theme-img {
+                opacity: 0;
+            }
+
+        }
+    }
+}
